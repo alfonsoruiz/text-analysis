@@ -1,0 +1,1 @@
+export const testFunc2 = 'Test Func 2';
