@@ -1,0 +1,27 @@
+form {
+  display: flex;
+  justify-content: space-between;
+
+  input {
+    font-weight: 300;
+    height: 30px;
+    width: 75%;
+    outline: none;
+    font-size: 100%;
+    border: 1px solid black;
+    padding: 10px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+  }
+
+  button {
+    height: 30px;
+    width: 20%;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    font-size: 16px;
+    cursor: pointer;
+  }
+}
