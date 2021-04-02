@@ -1,6 +1,7 @@
-const displayResults = (confidence, sentiment, subjectivity, irony) => {
-  const resultElement = document.getElementById('result');
-  resultElement.textContent = `This article is ${subjectivity}, ${irony} and the sentiment is ${sentiment}. The confidence of the analys is: ${confidence}%.`;
+const resultElement = document.getElementById('result');
+
+const displayResults = (confidence, sentiment, subjectivity, irony, url) => {
+  resultElement.innerHTML = `This <a href=${url} target=blank>article</a> is ${subjectivity} and ${irony}. The sentiment is ${sentiment}. The confidence of the analys is: ${confidence}%.`;
 }
 
 const resolveScoreTag = (score_tag) => {
@@ -16,16 +17,26 @@ const resolveScoreTag = (score_tag) => {
   return sentimentReference[score_tag];
 }
 
-const processResults = (data) => {
+const processResults = (data, url) => {
   let {confidence, score_tag, subjectivity, irony} = data;
   subjectivity = subjectivity.toLowerCase();
   irony = irony[0] === 'N' ?  'non ironic' : 'ironic';
   const sentiment = resolveScoreTag(score_tag);
 
-  displayResults(confidence, sentiment, subjectivity, irony);
+  displayResults(confidence, sentiment, subjectivity, irony, url);
+}
+
+const clearResults = () => {
+  resultElement.textContent = '';
+}
+
+const displayLoader = () => {
+  resultElement.textContent = '...Processing Data';
 }
 
 export {
   displayResults,
-  processResults
+  processResults,
+  clearResults,
+  displayLoader
 };

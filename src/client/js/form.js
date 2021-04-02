@@ -1,22 +1,41 @@
-import {processResults} from './results';
+import {processResults, clearResults, displayLoader} from './results';
 import {postData} from './helpers/fetchCalls';
 
 const button = document.querySelector('button');
+const inputElement = document.querySelector('input');
 
 const getData = async (url) => {
   try {
-    const {data} = await postData('http://localhost:8081/api', url);
-    processResults(data);
+    displayLoader();
+    
+    const {data, sourceUrl} = await postData('http://localhost:8081/api', url);
+
+    processResults(data, sourceUrl);
   } catch(e) {
     console.error(e);
   }
 }
 
+const validateInput = () => {
+  const validationMessage = document.getElementById('validation-message');
+  validationMessage.style.display = 'block';
+  clearResults()
+
+    setTimeout(() => {
+      validationMessage.style.display = 'none';
+    }, 3000)
+}
+
 const form = (e) => {
   e.preventDefault();
-  const inputElement = document.querySelector('input');
-  getData(inputElement.value);
-  inputElement.value = ''
+
+  if(Number(inputElement.value.length)) {
+    clearResults();
+    getData(inputElement.value);
+    inputElement.value = '';
+  } else {
+    validateInput();
+  }
 }
 
 button.addEventListener('click', form);

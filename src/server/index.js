@@ -29,7 +29,8 @@ server.post('/api', async (req, res) => {
     const data = await apiResponse.json();
 
     res.status(200).json({
-      data: data
+      data: data,
+      sourceUrl: sourceUrl
     })
   } catch(e) {
     console.error(e);
