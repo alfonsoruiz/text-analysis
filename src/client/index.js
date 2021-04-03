@@ -1,7 +1,13 @@
-import {handleSubmit} from './js/form';
-import {displayResults, processResults, clearResults} from './js/results';
-import {displayLoader} from './js/helpers/loader';
-import {postData} from './js/helpers/fetchCalls';
+import handleSubmit from './js/handleSubmit';
+import clearResults from './js/clearResults';
+import lookupScoreTag from './js/lookupScoreTag';
+import renderResults from './js/renderResults';
+import processResults from './js/processResults';
+import renderLoader from './js/renderLoader';
+import {postData} from './js/fetchCalls';
+import {urlValidator} from './js/regexValidators';
+import renderValidationError from './js/renderValidationError';
+import getData from './js/getData';
 
 import './styles/base.scss';
 import './styles/footer.scss';
@@ -13,9 +19,13 @@ import './styles/validation.scss';
 
 export {
   handleSubmit,
-  displayResults,
-  processResults,
   clearResults,
-  displayLoader,
-  postData
+  lookupScoreTag,
+  renderResults,
+  processResults,
+  renderLoader,
+  postData,
+  urlValidator,
+  renderValidationError,
+  getData
 }

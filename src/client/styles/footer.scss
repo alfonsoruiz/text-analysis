@@ -1,11 +1,7 @@
-footer {
+.footer {
+  font-family: 'Lato', sans-serif;
   height: 100px;
-  font-family: Lato;
+  font-weight: 300;
   font-size: 20px;
   text-align: center;
-
-  a {
-    text-decoration: none;
-    font-weight: bold;
-  }
 }
