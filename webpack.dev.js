@@ -1,31 +1,33 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './src/client/index.js',
   devtool: 'source-map',
-  devServer: {
-    contentBase: './dist'
+  entry: './src/client/index.js',
+  target: 'node',
+  output: {
+    library: {
+      name: 'Client',
+      type: 'var'
+    }
   },
   module: {
     rules: [
       {
-        test: '/\.js$/',
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        }
+          test: '/\.js$/',
+          exclude: /node_modules/,
+          loader: 'babel-loader'
       },
       {
         test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        use: [ 'style-loader', 'css-loader', 'sass-loader' ]
       }
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({
+    new HtmlWebPackPlugin({
       template: './src/client/views/index.html',
       filename: './index.html'
     }),

@@ -6,23 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NLP Text Analysis</title>
   </head>
-  <body class="app">
-    <main>
-      <header>
-        <h1>News Analysis</h1>
-        <h2>Enter the URL of any news article to analyze the sentiment of what was written using NLP</h2>
-      </header>
+  <body>
+    <div class="app">
+      <main>
+        <header>
+          <h1>News Analysis</h1>
+          <h2>Enter the URL of any news article to analyze the sentiment of what was written using NLP</h2>
+        </header>
+  
+        <p id="validation-message">! Input can not be empty</p>
+  
+        <form onsubmit="return Client.handleSubmit(event)">
+          <input type="text">
+          <button type="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">Start</button>
+        </form>
+  
+        <section class="results">
+          <p id="result"></p>
+        </section>
+      </main>
+    </div>
+    <footer>Made by <a href="https://www.alfonsoruiz.com" target="_blank">Alfonso Ruiz </a> &#129304;</footer>
 
-      <p id="validation-message">! Input can not be empty</p>
-
-      <form>
-        <input type="text">
-        <button>Start</button>
-      </form>
-
-      <section class="results">
-        <p id="result"></p>
-      </section>
-    </main>
+    <script>
+      // Check that service workers are supported
+      if ('serviceWorker' in navigator) {
+          // Use the window load event to keep the page load performant
+          window.addEventListener('load', () => {
+              navigator.serviceWorker.register('/service-worker.js');
+          });
+      }
+  </script>
   </body>
 </html>

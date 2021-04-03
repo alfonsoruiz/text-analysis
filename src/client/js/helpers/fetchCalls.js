@@ -5,7 +5,7 @@ const postData = async (url, data) => {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({data: data})
-  }
+  };
   
   try {
     const res = await fetch(url, postOptions);
@@ -14,7 +14,7 @@ const postData = async (url, data) => {
   } catch(e) {
     console.error(e);
   }
-}
+};
 
 export {
   postData

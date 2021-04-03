@@ -11,7 +11,7 @@ server.use(express.json());
 
 server.get('/', (req, res) => {
   res.sendFile('dist/index.html');
-})
+});
 
 server.post('/api', async (req, res) => {
   const sourceUrl = req.body.data;
@@ -20,7 +20,7 @@ server.post('/api', async (req, res) => {
     url: 'https://api.meaningcloud.com/sentiment-2.1',
     lang: 'auto',
     key: process.env.API_KEY,
-  }
+  };
 
   const apiEndpoint = `${apiParameters.url}?key=${apiParameters.key}&lang=${apiParameters.lang}&url=${sourceUrl}`;
   
@@ -31,12 +31,12 @@ server.post('/api', async (req, res) => {
     res.status(200).json({
       data: data,
       sourceUrl: sourceUrl
-    })
+    });
   } catch(e) {
     console.error(e);
   }
-})
+});
 
 server.listen(port, () => {
   console.log(`Server running on port ${port}`);
-})
+});

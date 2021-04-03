@@ -1,8 +1,9 @@
 const resultElement = document.getElementById('result');
 
 const displayResults = (confidence, sentiment, subjectivity, irony, url) => {
-  resultElement.innerHTML = `This <a href=${url} target=blank>article</a> is ${subjectivity} and ${irony}. The sentiment is ${sentiment}. The confidence of the analys is: ${confidence}%.`;
-}
+  resultElement.innerHTML = 
+  `This <a href=${url} target=blank>article</a> is ${subjectivity} and ${irony}. The sentiment is ${sentiment}. The confidence of the analys is: ${confidence}%.`;
+};
 
 const resolveScoreTag = (score_tag) => {
   const sentimentReference = {
@@ -12,10 +13,10 @@ const resolveScoreTag = (score_tag) => {
     N: 'negative',
     'N+': 'strongly negative',
     NONE: 'without polarity'
-  }
+  };
 
   return sentimentReference[score_tag];
-}
+};
 
 const processResults = (data, url) => {
   let {confidence, score_tag, subjectivity, irony} = data;
@@ -28,15 +29,10 @@ const processResults = (data, url) => {
 
 const clearResults = () => {
   resultElement.textContent = '';
-}
-
-const displayLoader = () => {
-  resultElement.textContent = '...Processing Data';
-}
+};
 
 export {
   displayResults,
   processResults,
   clearResults,
-  displayLoader
-};
+}

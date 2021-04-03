@@ -5,13 +5,14 @@
 @import './form.scss';
 @import './results.scss';
 @import './validation.scss';
+@import './footer.scss';
 
 * {
   box-sizing: border-box;
 }
 
 .app {
-  min-height: 100vh;
+  min-height: calc(100vh - 100px);
   min-width: 100%;
   display: flex;
   justify-content: center;

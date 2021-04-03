@@ -1,5 +1,15 @@
-import form from './js/form';
+import {handleSubmit} from './js/form';
 import {displayResults, processResults, clearResults} from './js/results';
-import {fetchCalls} from './js/helpers/fetchCalls';
+import {displayLoader} from './js/helpers/loader';
+import {postData} from './js/helpers/fetchCalls';
 
 import './styles/base.scss';
+
+export {
+  handleSubmit,
+  displayResults,
+  processResults,
+  clearResults,
+  displayLoader,
+  postData
+}

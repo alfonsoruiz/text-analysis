@@ -1,12 +1,16 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const WorkBoxPlugin = require('workbox-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const WorkBoxPlugin = require('workbox-webpack-plugin');
 
 module.exports ={
   mode: 'development',
   entry: './src/client/index.js',
+  output: {
+    libraryTarget: 'var',
+    library: 'Client'
+  },
   optimization: {
     minimizer: [new TerserPlugin({}), new OptimizeCSSAssetsPlugin({})]
   },
