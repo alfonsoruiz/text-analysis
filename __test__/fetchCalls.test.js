@@ -1,7 +1,7 @@
-import {postData} from '../src/client/js/helpers/fetchCalls';
+import {postData} from '../src/client/js/fetchCalls';
 
-describe('Fetch Calls', () => {
-  test('postData function exists', () => {
+describe('postData', () => {
+  test('Function exists', () => {
     expect(postData).toBeDefined();
   });
 });
