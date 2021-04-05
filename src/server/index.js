@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const fetch = require('node-fetch');
-const port = process.env.PORT || 8081;
+const PORT = process.env.PORT || 8081;
 const server = express();
 
 server.use(express.static('dist'));
@@ -37,6 +37,6 @@ server.post('/api', async (req, res) => {
   }
 });
 
-server.listen(port, () => {
+server.listen(PORT, () => {
   console.log(`Server running on port ${port}`);
 });
