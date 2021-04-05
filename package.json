@@ -9,7 +9,7 @@
     "nodemon": "nodemon src/server/index.js",
     "build-dev": "webpack serve --config webpack.dev.js --open",
     "build-prod": "webpack --config webpack.prod.js",
-    "heroku-postbuild": "webpack --config webpac.prod.js"
+    "heroku-postbuild": "webpack --config webpack.prod.js"
   },
   "repository": {
     "type": "git",
