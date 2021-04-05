@@ -2,7 +2,7 @@ const postData = async (url, data) => {
   const postOptions = {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type':'application/x-www-form-urlencoded',
       'Accept': 'application/json'
     },
     body: JSON.stringify({data: data})
