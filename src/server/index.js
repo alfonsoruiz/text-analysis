@@ -13,7 +13,7 @@ server.get('/', (req, res) => {
   res.sendFile('dist/index.html');
 });
 
-server.post('/api', async (req, res) => {
+server.post('/api/', async (req, res) => {
   const sourceUrl = req.body.data;
 
   const apiParameters = {
