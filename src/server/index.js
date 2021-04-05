@@ -38,5 +38,5 @@ server.post('/api', async (req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`Server running on port ${port}`);
+  console.log(`Server running on port ${Port}`);
 });
