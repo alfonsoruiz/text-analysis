@@ -33,7 +33,11 @@ server.post('/api/', async (req, res) => {
       sourceUrl: sourceUrl
     });
   } catch(e) {
-    console.error(e);
+    console.log(e);
+    res.status(500).json({
+      data: 'Dont know what happend',
+      sourceUrl: sourceUrl
+    });
   }
 });
 
