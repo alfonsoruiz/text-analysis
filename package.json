@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "description": "A tool to analyze bodies of text using Natural Language processing.",
   "main": "index.js",
+  "engines": {
+    "node": "15.x",
+    "npm": "7.x"
+  },
   "scripts": {
     "test": "jest",
     "start": "node src/server/index.js",
     "nodemon": "nodemon src/server/index.js",
     "build-dev": "webpack serve --config webpack.dev.js --open",
-    "build-prod": "webpack --config webpack.prod.js",
-    "heroku-postbuild": "webpack -p"
+    "build-prod": "webpack --config webpack.prod.js"
   },
   "repository": {
     "type": "git",
