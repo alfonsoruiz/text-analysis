@@ -11,7 +11,7 @@ server.use(cors());
 server.use(express.json());
 
 server.get('/', (req, res) => {
-  res.sendFile('/dist/index.html');
+  res.sendFile('dist/index.html', { root: __dirname });
 });
 
 server.post('/api', async (req, res) => {
