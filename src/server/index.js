@@ -3,6 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const fetch = require('node-fetch');
 const PORT = process.env.PORT || 8081;
+const path = require('path');
 const server = express();
 
 server.use(express.static('dist'));
@@ -10,7 +11,7 @@ server.use(cors());
 server.use(express.json());
 
 server.get('/', (req, res) => {
-  res.sendFile('dist/index.html');
+  res.sendFile('/dist/index.html');
 });
 
 server.post('/api', async (req, res) => {
