@@ -9,7 +9,7 @@ server.use(express.static('dist'));
 server.use(cors());
 server.use(express.json());
 
-server.get('/', (req, res) => {
+server.get('*', (req, res) => {
   res.sendFile('dist/index.html');
 });
 
