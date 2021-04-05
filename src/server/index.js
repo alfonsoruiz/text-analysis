@@ -9,7 +9,7 @@ server.use(express.static('dist'));
 server.use(cors());
 server.use(express.json());
 
-app.use(function (req, res, next) {
+server.use(function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Credentials', 'true');
   next();

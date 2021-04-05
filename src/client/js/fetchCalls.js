@@ -1,7 +1,7 @@
 const postData = async (url, data) => {
   const postOptions = {
     method: 'POST',
-    credentials: 'same-origin',
+    mode: 'cors',
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
