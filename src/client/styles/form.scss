@@ -3,28 +3,37 @@
 
 .url-input {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
 
   input {
     font-weight: weight(reg);
-    width: 75%;
+    width: 100%;
     outline: none;
     font-size: 100%;
     padding: 10px;
-    margin-bottom: 50px;
+    height: 30px;
+  }
+
+  @media(min-width: 500px) {
+    button {
+      max-width: 50%;
+    }
   }
 
   button {
-    width: 20%;
+    width: 80%;
     background-color: black;
     color: white;
+    padding: 10px 0;
     font-size: 16px;
     cursor: pointer;
+    outline: none;
   }
 
   input, button {
     border: $primary-border;
     border-radius: $border-radius;
-    height: 30px;
+    margin-bottom: 30px;
   }
 }
