@@ -9,12 +9,12 @@
   <body>
     <div class="app">
       <main>
-        <header>
+        <header class="headline">
           <h1>News Analysis</h1>
           <h2>Enter the URL of any news article to analyze the sentiment of what was written using NLP</h2>
         </header>
   
-        <form onsubmit="return Client.handleSubmit(event)">
+        <form onsubmit="return Client.handleSubmit(event)" class="url-input">
           <input type="text">
           <button type="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">Start</button>
         </form>

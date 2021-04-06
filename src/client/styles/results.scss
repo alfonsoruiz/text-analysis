@@ -1,12 +1,15 @@
+@import 'variables';
+@import 'functions';
+
 .results {
-  font-family: 'Lato', sans-serif;
+  font-family: $primary-font;
   text-align: center;
-  font-weight: 300;
+  font-weight: weight(reg);
   font-size: 20px;
-  color: #20AF24;
+  color: $result-color;
 
   a {
-  color: #20AF24;
+  color: $result-color;
   }
 
   a:visited {

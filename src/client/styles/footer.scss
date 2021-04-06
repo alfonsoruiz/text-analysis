@@ -1,7 +1,10 @@
+@import 'variables';
+@import 'functions';
+
 .footer {
-  font-family: 'Lato', sans-serif;
+  font-family: $primary-font;
   height: 100px;
-  font-weight: 300;
+  font-weight: weight(reg);
   font-size: 20px;
   text-align: center;
 }
