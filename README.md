@@ -22,7 +22,7 @@ git clone https://github.com/alfonsoruiz/text-analysis.git
 npm install
 ```
 
-## Environment Variables
+### Environment Variables
 Setup enviroment variables to learn more read about [.env](https://www.npmjs.com/package/dotenv)
 
 1. Create environment variables with desired port number
@@ -36,46 +36,17 @@ API_KEY = '[key from meaning cloud api]'
 process.env.API_Key
 ```
 
-## Development Mode
-
-1. Change url string in getData function to new localhost port
-```
-const getData = async (url) => {
-  Client.renderLoader(document.getElementById('result'));
-
-  try {
-    const {data, sourceUrl} = await Client.postData('[newLocalHost]/api', url);
-    Client.processResults(data, sourceUrl);
-  } catch(e) {
-    console.error(e);
-  }
-};
-```
-2. Run project in development using webpack dev server
+### Development Mode
+1. Run project in development using webpack dev server
 ```
 npm run build-dev
 ```
-3. Start Local Server
+2. Start Local Server
 ```
 npm start
 ```
 
-## Production Mode
-
-1. Change url string in getData function to new localhost port
-```
-const getData = async (url) => {
-  Client.renderLoader(document.getElementById('result'));
-
-  try {
-    const {data, sourceUrl} = await Client.postData('[newLocalHost]/api', url);
-    Client.processResults(data, sourceUrl);
-  } catch(e) {
-    console.error(e);
-  }
-};
-```
-
+### Production Mode
 2. Run project in production mode
 ```
 npm run build-prod
