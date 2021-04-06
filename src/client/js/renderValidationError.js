@@ -5,8 +5,8 @@ const renderValidationError = (message) => {
 
   setTimeout(() => {
     result.classList.remove('validation');
-    result.textContent = '';
-  }, 1000);
+    Client.removeTextContent(result);
+  }, 4000);
 }
 
 export default renderValidationError

@@ -12,9 +12,9 @@ const handleSubmit = (e) => {
     return;
   }
 
-  Client.clearResults();
+  Client.removeTextContent(document.getElementById('result'));
   Client.getData(inputElement.value);
-  inputElement.value = '';
+  Client.clearInput(inputElement);
 };
 
 export default handleSubmit

@@ -1,5 +1,4 @@
 import handleSubmit from './js/handleSubmit';
-import clearResults from './js/clearResults';
 import lookupScoreTag from './js/lookupScoreTag';
 import renderResults from './js/renderResults';
 import processResults from './js/processResults';
@@ -8,6 +7,9 @@ import {postData} from './js/fetchCalls';
 import {urlValidator} from './js/regexValidators';
 import renderValidationError from './js/renderValidationError';
 import getData from './js/getData';
+import {transformIronyData} from './js/utils';
+import {removeTextContent} from './js/utils';
+import {clearInput} from './js/utils';
 
 import './styles/base.scss';
 import './styles/footer.scss';
@@ -18,7 +20,6 @@ import './styles/validation.scss';
 
 export {
   handleSubmit,
-  clearResults,
   lookupScoreTag,
   renderResults,
   processResults,
@@ -26,5 +27,8 @@ export {
   postData,
   urlValidator,
   renderValidationError,
-  getData
+  getData,
+  transformIronyData,
+  removeTextContent,
+  clearInput,
 }

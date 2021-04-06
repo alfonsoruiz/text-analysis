@@ -3,11 +3,12 @@
 
 .results {
   font-family: $primary-font;
-  text-align: center;
   font-weight: weight(reg);
   font-size: 20px;
   color: $result-color;
   line-height: $line-height;
+  text-align: center;
+  width: 100%;
 
   a {
   color: $result-color;
@@ -15,5 +16,12 @@
 
   a:visited {
     color: none;
+  }
+}
+
+@media(min-width: 500px) {
+  #result {
+    margin: 0 auto;
+    max-width: 60%;
   }
 }
