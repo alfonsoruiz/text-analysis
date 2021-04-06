@@ -1,3 +1,5 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/d90c89b9e85c59723123/maintainability)](https://codeclimate.com/github/alfonsoruiz/text-analysis/maintainability)
+
 # NLP News Analyzer
 NLP news analyzer is a web application that allows users to use Natural Language Processing to determine the sentiment, subjectivity and irony of a story all by just inputing any valid url into the search box. Results will also yield a percentage level value of the confidence in the analysis.
 
